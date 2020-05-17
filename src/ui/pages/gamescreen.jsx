@@ -1,8 +1,10 @@
 /* @jsx m */
 import m from 'mithril';
 
-import DrawerUI from './drawer.jsx';
-import HeaderUI from './header.jsx'
+import DrawerUI from '../components/drawer.jsx';
+import HeaderUI from '../components/header.jsx';
+
+import * as storyManager from '../../lib/storyManager';
 
 export default function LandingUI() {
   return {
@@ -10,10 +12,10 @@ export default function LandingUI() {
       return (
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
             mdl-layout--fixed-header">
-            <HeaderUI title="Landing" />
+            <HeaderUI title={storyManager.getTitle()} />
             <DrawerUI />
             <main class="mdl-layout__content">
-              <div class="main-content">Hello World</div>
+              <div class="" >{m.trust(storyManager.getPassage().html)}</div>
             </main>
         </div>
       );

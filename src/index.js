@@ -1,10 +1,17 @@
 'use strict';
 
 const root = document.getElementById('main-content');
-import landing from './ui/landing.jsx';
 import m from 'mithril';
+//load our story
+import * as storyManager from './lib/storyManager';
+storyManager.load();
+
+//load our pages
+import gamescreen from './ui/pages/gamescreen.jsx';
+import loadscreen from './ui/pages/loadscreen.jsx';
 
 //setup our router
-m.route(root, '/landing', {
-  '/landing': landing,
+m.route(root, '/load', {
+  '/load': loadscreen,
+  '/play': gamescreen,
 });

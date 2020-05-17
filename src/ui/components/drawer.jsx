@@ -12,6 +12,9 @@ export default function DrawerUI() {
         <a class="mdl-navigation__link" href="">Preferences</a>
       </nav>
     </div>);
+    },
+    onupdate: (vnode) => {
+      componentHandler.upgradeElement(vnode.dom);
     }
   }
 }

@@ -10,6 +10,9 @@ export default function HeaderUI() {
         <div class="mdl-layout-spacer"></div>
       </div>
     </header>);
+    },
+    onupdate: (vnode) => {
+      componentHandler.upgradeElement(vnode.dom);
     }
   }
 }

@@ -5,9 +5,11 @@ install:
 build:
 .PHONY: build
 
-run:
+run: clean
 	parcel serve src/index.html
 .PHONY: run
 
 clean:
+	rm -rf .cache/
+	rm -rf dist/
 .PHONY: clean
