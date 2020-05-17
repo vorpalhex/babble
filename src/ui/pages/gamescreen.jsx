@@ -3,6 +3,7 @@ import m from 'mithril';
 
 import DrawerUI from '../components/drawer.jsx';
 import HeaderUI from '../components/header.jsx';
+import Message from '../components/message.jsx';
 
 import * as storyManager from '../../lib/storyManager';
 
@@ -15,7 +16,7 @@ export default function LandingUI() {
             <HeaderUI title={storyManager.getTitle()} />
             <DrawerUI />
             <main class="mdl-layout__content">
-              <div class="" >{m.trust(storyManager.getPassage().html)}</div>
+              <div class="" >{m.fragment(m.trust(storyManager.getPassage().html))}</div>
             </main>
         </div>
       );
